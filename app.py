@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import mysql.connector
 from mysql.connector import Error
 import os
@@ -7,6 +8,7 @@ import re
 from datetime import datetime
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # Database configuration
 DB_CONFIG = {
